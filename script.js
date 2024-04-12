@@ -72,5 +72,18 @@ document.addEventListener('DOMContentLoaded', function() {
     checkoutBtn.addEventListener('click', function() {
         alert('Redirecting to checkout page...');
         window.location.href = 'checkout.html'; // Redirect to the checkout page
+
+         var addToCartButtons = document.querySelectorAll('.btn-buy-now');
+
+    // Loop through each button and attach an event listener
+    addToCartButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            // Prevent the default action of the link (i.e., redirecting to cart.html)
+            event.preventDefault();
+
+            // Here you would add the logic to add the item to the cart
+            // For simplicity, let's just log a message to the console for now
+            console.log('Item added to cart!');
+    
     });
 });
