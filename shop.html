@@ -1,0 +1,131 @@
+<!DOCTYPE html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ad2034d44f.js" crossorigin="anonymous"></script>
+ </head>
+    
+    <body>
+    <header id="header">
+        <a href="#"><img src="img/DAWR-logos.jpeg" class="logo" alt=""></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="product-list">
+        
+        <section class="product-item">
+            <img src="img/IMG-20210115-WA0075.jpg" alt="">
+            <div class="des">
+                <span>hmar</span>
+                <h5>dress</h5>
+            </div>
+            <h4>Rs2000</h4>
+            <button class="btn-buy-now" onclick="addToCart('hmar dress', 2000)">Buy Now</button>
+        </section>
+        
+        <section class="product-item">
+            <img src="img/IMG-20210115-WA0075.jpg" alt="">
+            <div class="des">
+                <span>hmar</span>
+                <h5>dress</h5>
+            </div>
+            <h4>Rs2000</h4>
+            <button class="btn-buy-now" onclick="addToCart('hmar dress', 2000)">Buy Now</button>
+        </section>
+
+        <section class="product-item">
+            <img src="img/120340215_2738840856336926_3292052377725257844_n.jpg" alt="">
+            <div class="des">
+                <span>hmar</span>
+                <h5>dress</h5>
+            </div>
+            <h4>Rs2000</h4>
+            <button class="btn-buy-now" onclick="addToCart('hmar dress', 2000)">Buy Now</button>
+        </section>
+
+        <section class="product-item">
+            <img src="img/120340215_2738840856336926_3292052377725257844_n.jpg" alt="">
+            <div class="des">
+                <span>hmar</span>
+                <h5>dress</h5>
+            </div>
+            <h4>Rs2000</h4>
+            <button class="btn-buy-now" onclick="addToCart('hmar dress', 2000)">Buy Now</button>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec enim a ante lobortis efficitur.</p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i> +123456789</span>
+                    <span><i class="fas fa-envelope"></i> info@example.com</span>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-form">
+                <h2>Contact Us</h2>
+                <form action="#">
+                    <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+                    <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+                    <button type="submit" class="btn btn-big contact-btn">
+                        <i class="fas fa-envelope"></i>
+                        Send
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2024 Online Shop. All rights reserved.
+        </div>
+        <script src="script.js" defer></script>
+        <script>
+            function addToCart(name, price) {
+                
+                let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    
+               
+                cartItems.push({ name: name, price: price });
+    
+                
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                
+                
+                alert('Item added to cart!');
+                window.location.href = 'cart.html';
+            }
+        </script>
+    </footer>
+</body>
+</html>
