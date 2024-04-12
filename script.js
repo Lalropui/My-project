@@ -1,5 +1,3 @@
-// script.js
-
 // Function to add items to the cart
 function addToCart(name, price) {
     // Retrieve cart items from local storage or initialize an empty array
@@ -66,24 +64,20 @@ function removeFromCart(index) {
 // Event listener to display cart items when the cart page loads
 document.addEventListener('DOMContentLoaded', function() {
     displayCartItems();
-    
-    // Add event listener to the checkout button
-    const checkoutBtn = document.getElementById('checkoutBtn');
-    checkoutBtn.addEventListener('click', function() {
-        alert('Redirecting to checkout page...');
-        window.location.href = 'checkout.html'; // Redirect to the checkout page
-        
-        // Get all the elements with the class name 'btn-buy-now'
-    var addToCartButtons = document.querySelectorAll('.btn-buy-now');
-
-    // Loop through each button and attach an event listener
-    addToCartButtons.forEach(function(button) {
-        button.addEventListener('click', function(event) {
-            // Prevent the default action of the link (i.e., redirecting to cart.html)
-            event.preventDefault();
-
-            // Here you would add the logic to add the item to the cart
-            // For simplicity, let's just log a message to the console for now
-            console.log('Item added to cart!');
-  });
 });
+
+// Get all the elements with the class name 'btn-buy-now'
+var addToCartButtons = document.querySelectorAll('.btn-buy-now');
+
+// Loop through each button and attach an event listener
+addToCartButtons.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+        // Prevent the default action of the link (i.e., redirecting to cart.html)
+        event.preventDefault();
+
+        // Here you would add the logic to add the item to the cart
+        // For simplicity, let's just log a message to the console for now
+        console.log('Item added to cart!');
+    });
+});
+
